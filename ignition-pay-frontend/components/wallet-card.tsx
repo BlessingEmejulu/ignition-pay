@@ -56,7 +56,11 @@ function WalletCardImpl({ asset, hideAmounts = false }: WalletCardProps) {
       <div className="flex items-end justify-between pt-2 border-t border-border">
         <div>
           <p className="text-xs text-muted-foreground uppercase tracking-wide">{t('walletCard.balance')}</p>
-          <p className="text-xl font-bold text-foreground mt-1">
+          <p
+            className="text-xl font-bold text-foreground mt-1"
+            aria-live="polite"
+            aria-atomic="true"
+          >
             {hideAmounts ? MASKED_AMOUNT : balance.toFixed(4)}
           </p>
         </div>
